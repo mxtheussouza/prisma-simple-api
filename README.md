@@ -1,4 +1,4 @@
-## Aliança API.
+## Simple API with Prisma ORM and Express boilerplate.
 
 ### Requisitos
 
