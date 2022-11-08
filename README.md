@@ -1,38 +1,33 @@
-## Simple API with Prisma ORM and Express boilerplate.
+## Simple API Rest boilerplate with Prisma ORM and Express.
 
-### Requisitos
+### Requirements
 
 - yarn
 - docker and docker-compose
 
-### Instalação
+### Installation
 
-**- Clone o repositório**
-```sh
-git clone https://github.com/matheusdearaujo/simple-api-boilerplate.git
-```
-
-**- Copie o arquivo .env.example para o .env**
+**- Copy the .env.example file to the .env**
 ```sh
 cp .env.example .env
 ```
 
-**- Rode o banco de dados com Docker**
+**- Run the database with Docker**
 ```sh
 docker-compose up -d --build
 ```
 
-**- Instale as dependências do projeto**
+**- Install project dependencies**
 ```sh
 yarn
 ```
 
-**- Gere as tabelas do banco**
+**- Run migrations**
 ```sh
 yarn prisma migrate dev
 ```
 
-**- Inicie o projeto em ambiente de desenvolvimento**
+**- Start the project in development environment**
 ```sh
 yarn dev
 ```
