@@ -12,10 +12,19 @@
 cp .env.example .env
 ```
 
+### Run project with docker (deploy)
+
 **- Run the database with Docker**
 ```sh
 docker-compose up -d --build
 ```
+
+**- Run migrations**
+```sh
+docker exec apirest-app yarn prisma:migrate
+```
+
+### Run project in development environment
 
 **- Install project dependencies**
 ```sh
