@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+    simple-api-db:
+        image: mysql:5.7
+        container_name: simple-api-db
+        environment:
+            MYSQL_DATABASE: simple_api_db
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - 3232:3306
+        networks:
+            - apinet
+
+networks:
+  apinet:
+      driver: bridge

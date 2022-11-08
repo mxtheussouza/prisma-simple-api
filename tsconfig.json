@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+    "sourceMap": true,
+		"noImplicitAny": true,
+		"strictPropertyInitialization": false,
+		"skipLibCheck": true,
+    "removeComments": true,
+		"rootDir": "src",
+		"outDir": "dist",
+		"baseUrl": "src",
+		"paths": {
+			"@/*": ["*"],
+		},
+	},
+}
