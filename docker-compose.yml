@@ -1,17 +1,30 @@
 version: '3.8'
 
 services:
-    simple-api-db:
+    apirest-app:
+        build: .
+        image: apirest-nodejs
+        container_name: apirest-app
+        ports:
+            - 3000:3000
+        networks:
+            - apirestnet
+        links:
+            - apirest-db
+        depends_on:
+            - apirest-db
+
+    apirest-db:
         image: mysql:5.7
-        container_name: simple-api-db
+        container_name: apirest-db
         environment:
-            MYSQL_DATABASE: simple_api_db
+            MYSQL_DATABASE: apirest_db
             MYSQL_ROOT_PASSWORD: root
         ports:
             - 3232:3306
         networks:
-            - apinet
+            - apirestnet
 
 networks:
-  apinet:
+  apirestnet:
       driver: bridge

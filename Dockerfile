@@ -1,4 +1,4 @@
-FROM node:16.16.0-slim
+FROM node:18.12.0-slim
 
 USER node
 
@@ -8,7 +8,8 @@ WORKDIR /home/node/app
 
 COPY --chown=node:node . .
 
-RUN yarn install
+RUN yarn install && \
+    yarn build
 
 CMD [ "yarn", "start" ]
 

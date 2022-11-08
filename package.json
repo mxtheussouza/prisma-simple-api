@@ -11,6 +11,7 @@
     "build": "yarn clean && tsc && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "lint": "tsc --noEmit && eslint . --ext .ts --max-warnings=0",
     "lint:fix": "yarn lint --fix",
+    "prisma:migrate": "prisma migrate dev && prisma db seed",
     "postinstall": "nvmrc-check --node $(cat .nvmrc)",
     "prepare": "husky install"
   },
@@ -23,6 +24,9 @@
     "*.ts": [
       "yarn lint:fix"
     ]
+  },
+  "prisma": {
+    "seed": "tsnd --transpile-only ./src/database/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.5.0",
