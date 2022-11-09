@@ -33,7 +33,7 @@ yarn
 
 **- Run migrations**
 ```sh
-yarn prisma migrate dev
+yarn prisma:migrate
 ```
 
 **- Start the project in development environment**
