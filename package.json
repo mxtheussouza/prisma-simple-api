@@ -1,5 +1,5 @@
 {
-  "name": "alianca-api",
+  "name": "prisma-simple-api",
   "version": "1.0.0",
   "main": "./dist/server.js",
   "license": "MIT",
@@ -11,7 +11,9 @@
     "build": "yarn clean && tsc && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "lint": "tsc --noEmit && eslint . --ext .ts --max-warnings=0",
     "lint:fix": "yarn lint --fix",
-    "prisma:migrate": "prisma migrate dev && prisma db seed",
+    "migrate:dev": "prisma migrate dev && prisma db seed",
+    "migrate:prod": "prisma migrate deploy",
+    "studio": "prisma studio",
     "postinstall": "nvmrc-check --node $(cat .nvmrc)",
     "prepare": "husky install"
   },
