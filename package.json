@@ -11,6 +11,7 @@
     "build": "yarn clean && tsc && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "lint": "tsc --noEmit && eslint . --ext .ts --max-warnings=0",
     "lint:fix": "yarn lint --fix",
+    "prettier:format": "pretty-quick --pattern '**/*.ts' --verbose",
     "migrate:dev": "prisma migrate dev && prisma db seed",
     "migrate:prod": "prisma migrate deploy",
     "studio": "prisma studio",
@@ -24,7 +25,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn lint:fix"
+      "yarn lint:fix",
+      "yarn prettier:format --staged"
     ]
   },
   "prisma": {
@@ -61,6 +63,7 @@
     "lint-staged": "^13.0.3",
     "nvmrc-check": "^1.0.2",
     "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
     "prisma": "^4.5.0",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
