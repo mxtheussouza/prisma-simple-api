@@ -1,30 +1,30 @@
 version: '3.8'
 
 services:
-    apirest-app:
+    prisma-simple-app:
         build: .
-        image: apirest-nodejs
-        container_name: apirest-app
+        image: prisma-simple-nodejs
+        container_name: prisma-simple-app
         ports:
             - 3000:3000
         networks:
-            - apirestnet
+            - prismasimplenet
         links:
-            - apirest-db
+            - prisma-simple-db
         depends_on:
-            - apirest-db
+            - prisma-simple-db
 
-    apirest-db:
+    prisma-simple-db:
         image: mysql:5.7
-        container_name: apirest-db
+        container_name: prisma-simple-db
         environment:
-            MYSQL_DATABASE: apirest_db
+            MYSQL_DATABASE: prisma_simple_db
             MYSQL_ROOT_PASSWORD: root
         ports:
             - 3232:3306
         networks:
-            - apirestnet
+            - prismasimplenet
 
 networks:
-  apirestnet:
+  prismasimplenet:
       driver: bridge
