@@ -1,4 +1,4 @@
-## Simple API Rest boilerplate with Prisma ORM and Express.
+## Simple Rest API boilerplate with Prisma ORM and Express.
 
 ### Requirements
 
@@ -21,7 +21,7 @@ docker-compose up -d --build
 
 **- Run migrations**
 ```sh
-docker exec apirest-app yarn prisma:migrate
+docker exec prisma-simple-app yarn migrate:prod
 ```
 
 ### Run project in development environment
@@ -33,7 +33,7 @@ yarn
 
 **- Run migrations**
 ```sh
-yarn prisma:migrate
+yarn migrate:dev
 ```
 
 **- Start the project in development environment**
