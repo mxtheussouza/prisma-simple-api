@@ -1,10 +1,7 @@
 import { User } from "@/entities/user";
+import { BaseRepository } from "./base.repository";
 
-export interface UserRepository {
+export interface UserRepository extends BaseRepository<User> {
   findAll(): Promise<Array<Omit<User, "password">>>;
-  findById(id: string): Promise<User | null>;
   findByEmail(email: string): Promise<User | null>;
-  save(user: User): Promise<void>;
-  update(id: string, user: User): Promise<void>;
-  delete(id: string): Promise<void>;
 }

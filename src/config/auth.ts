@@ -1,4 +1,6 @@
+import { SECRET } from "./environments";
+
 export const auth = {
-  secret: String(process.env.SECRET),
+  secret: String(SECRET),
   expires: "24h",
 };

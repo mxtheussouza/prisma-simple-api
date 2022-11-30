@@ -2,19 +2,19 @@ import { hash } from "bcryptjs";
 import { prisma } from ".";
 
 const main = async (): Promise<void> => {
-  const passwordHash = await hash("125667", 12);
+  const passwordHash = await hash("88882788a", 12);
 
-  const teste = await prisma.user.upsert({
-    where: { email: "teste@gmail.com" },
+  const user = await prisma.user.upsert({
+    where: { email: "prisma@gmail.com" },
     update: {},
     create: {
-      name: "Teste GO",
-      email: "teste@gmail.com",
+      name: "User Test",
+      email: "prisma@gmail.com",
       password: passwordHash,
     },
   });
 
-  console.log({ teste });
+  console.log({ user });
 };
 
 main()

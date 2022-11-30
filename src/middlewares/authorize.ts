@@ -10,7 +10,7 @@ export const authorize = (
   const { authorization } = request.headers;
 
   if (!authorization) {
-    return response.status(401).json({ message: "Não autorizado!" });
+    return response.status(401).json({ message: "Unauthorized!" });
   }
 
   const token = authorization?.split(" ")[1];
@@ -22,6 +22,6 @@ export const authorize = (
 
     next();
   } catch (error) {
-    return response.status(401).json({ message: "Não autorizado!" });
+    return response.status(401).json({ message: "Unauthorized!" });
   }
 };

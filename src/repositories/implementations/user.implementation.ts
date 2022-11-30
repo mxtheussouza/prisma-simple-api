@@ -7,7 +7,7 @@ export class UserImplementation implements UserRepository {
 
   async findAll(): Promise<Array<Omit<User, "password">>> {
     const users = await this._prisma.user.findMany({
-      select: { id: true, name: true, email: true, created_at: true },
+      select: { id: true, name: true, email: true, createdAt: true },
     });
 
     return users;

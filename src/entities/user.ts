@@ -4,7 +4,7 @@ export class User extends BaseEntity {
   public name: string;
   public email: string;
   public password: string;
-  public created_at?: Date;
+  public createdAt?: Date;
 
   constructor(props: User) {
     super();

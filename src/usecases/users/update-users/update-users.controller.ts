@@ -6,23 +6,15 @@ export class UpdateUsersController {
   constructor(private readonly _updateUsersService: UpdateUsersService) {}
 
   async handle(request: Request, response: Response): Promise<Response> {
-    try {
-      const { name, email, password }: UpdateUserDTO = request.body;
-      const { id } = request.params;
+    const { name, email, password }: UpdateUserDTO = request.body;
+    const { id } = request.params;
 
-      await this._updateUsersService.execute(id, {
-        name,
-        email,
-        password,
-      });
+    await this._updateUsersService.execute(id, {
+      name,
+      email,
+      password,
+    });
 
-      return response
-        .status(200)
-        .json({ message: "User updated successfully" });
-    } catch (error: any) {
-      return response
-        .status(500)
-        .json({ message: error.message || "Erro interno de servidor." });
-    }
+    return response.status(200).json({ message: "User updated successfully!" });
   }
 }

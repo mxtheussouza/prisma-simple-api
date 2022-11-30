@@ -2,8 +2,8 @@ import { Router } from "express";
 
 import { authorize } from "@/middlewares/authorize";
 
-import { authRoutes } from "./api/auth.route";
-import { usersRoutes } from "./api/users.route";
+import { authRoutes } from "./v1/auth.route";
+import { usersRoutes } from "./v1/users.route";
 
 const routes = Router();
 

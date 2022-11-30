@@ -1,13 +1,19 @@
+import { HttpError } from "@/helpers/http-error";
 import { UserRepository } from "@/repositories/user.repository";
 
 export class DeleteUsersService {
-  constructor(private readonly _usersRepository: UserRepository) {}
+  constructor(private readonly _userRepository: UserRepository) {}
 
   async execute(id: string): Promise<void> {
-    const userExists = await this._usersRepository.findById(id);
+    const userExists = await this._userRepository.findById(id);
 
-    if (!userExists) throw new Error("Usuário não existe!");
+    if (!userExists) {
+      throw new HttpError(
+        "User does not exist or has already been deleted.",
+        400,
+      );
+    }
 
-    await this._usersRepository.delete(id);
+    await this._userRepository.delete(id);
   }
 }
