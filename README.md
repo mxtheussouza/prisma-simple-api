@@ -3,7 +3,7 @@
 ### Requirements
 
 - yarn
-- docker and docker-compose
+- docker-compose
 
 ### Installation
 
@@ -21,7 +21,7 @@ docker-compose up -d --build
 
 **- Run migrations**
 ```sh
-docker exec prisma-simple-app yarn migrate:prod
+docker-compose exec prisma-simple-app yarn migrate:prod
 ```
 
 ### Run project in development environment
